@@ -1,16 +1,11 @@
 from __future__ import annotations
 import json
 import re
-import ssl
 import urllib .request
 from pathlib import Path
 
 CACHE =Path (__file__ ).resolve ().parent .parent /"data"/"syllabus_cache.json"
 BASE ="https://infodepot.korea.ac.kr/lecture1/lecsubjectPlanViewNew.jsp"
-_ctx =ssl .create_default_context ()
-_ctx .check_hostname =False
-_ctx .verify_mode =ssl .CERT_NONE
-
 def _cache ()->dict :
     if CACHE .exists ():
         try :
